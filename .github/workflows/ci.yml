@@ -4,26 +4,28 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+
 jobs:
-  build-and-test:
+  build-and-test: 
     runs-on: ubuntu-latest
     steps:
       - name: Clonar repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: Instalar dependencias
         run: npm install
 
+      - name: Lint del codigo
+        run: npm run lint
+
       - name: Ejecutar pruebas
         run: npm test
 
-      - name: Lint del código
-        run: npm run lint
-
       - name: Simular despliegue
-        run: echo "Despliegue simulado: La aplicación pasó Lint y Pruebas correctamente"
+        run: | 
+          echo "Despliegue simulado: La aplicacion paso Lint y Pruebas exitosamente"
