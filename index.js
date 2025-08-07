@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT 
+const port = process.env.PORT; 
 
 //endpoint que responde un mensaje
 app.get('/', (req, res) => {
