@@ -20,8 +20,7 @@ describe('fibonacci', () => {
   test('fibonacci(1) = 1', () => {
     expect(fibonacci(1)).toBe(1);
   });
-  test('fibonacci(10) = 56 (fallo intencional)', () => {
-  expect(fibonacci(10)).toBe(56);
-});
-
+  test('fibonacci(10) = 55', () => {  // Volvemos al valor correcto
+    expect(fibonacci(10)).toBe(55);
+  });
 });
